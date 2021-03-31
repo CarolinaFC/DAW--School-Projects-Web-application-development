@@ -1,0 +1,128 @@
+﻿@model culinariaMVC.Models.Receita
+
+@{
+    ViewData["Title"] = "Criar uma Nova Receita";
+    Layout = "~/Views/Shared/Layout_AdminNovaReceita.cshtml";
+}
+
+
+<div class="row" id="box">
+    <div class="col-5">
+        <h3 id="nova_receita_titulo">Nova Receita</h3>
+        <br>
+
+        <form class="colEsq" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeReceita" class="control-label">Nome da Receita:</label>
+                <input asp-for="NomeReceita" type="text" class="form-control" placeholder="Insira o nome da receita" id="nome_receita">
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="categoria_novaReceita" name="cat">
+                    <option selected disabled label="Categoria"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescricaoReceita" class="control-label">Descrição:</label>
+                <textarea asp-for="DescricaoReceita" class="form-control" rows="5" id="descricao"></textarea>
+            </div>
+            <div class="form-group" id="add_Ingredientes">
+                <label asp-for="Ingredientes" class="control-label">Ingredientes:</label>
+                <textarea asp-for="Ingredientes" class="form-control" rows="5" id="ingredientes"></textarea>
+            </div>
+            <div class="form-group" id="instrucoes_div">
+                <label asp-for="Instrucoes" class="control-label">Instruções</label>
+                <textarea asp-for="Instrucoes" class="form-control" rows="5" id="instrucoes"></textarea>
+            </div>
+        </form>
+        
+
+    </div>
+
+    <div class="col-5">
+        <form class="colDir" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ImgReceita" class="control-label">Selecione uma Imagem para a Nova Receita:</label>
+                <input asp-for="ImgReceita" id="img_upload" type="file" class="form-control-file border">
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="form-group">
+                <select asp-for="GrauDificuldade" class="form-control" id="grau_dific">
+                    <option>Grau de Dificuldade</option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select asp-for="CustoRefeicao" class="form-control" id="custo_ref">
+                    <option>Custo da Refeição</option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select asp-for="TempoPreparacao" class="form-control" id="tempo_conf">
+                    <option>Tempo da confecção</option>
+                    <option value="15 minutos">15 minutos</option>
+                    <option value="20 minutos">20 minutos</option>
+                    <option value="30 minutos">30 minutos</option>
+                    <option value="45 minutos">45 minutos</option>
+                    <option value="60 minutos">60 minutos</option>
+                    <option value="Superior a 60 minutos">Superior a 60 minutos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doses" class="control-label">Doses</label>
+                <input asp-for="Doses" type="number" class="form-control" id="doses_NovaReceita" /><a>Pessoas</a>
+            </div>
+            <div class="col-2">
+                <button id="btn_Publicar" type="submit" class="btn btn-secondary">Publicar Nova Receita</button>
+            </div>
+        </form>
+    </div>
+    
+
+</div>
+
+
+@*<h1>Create</h1>
+
+    <h4>admin_pasteleiro</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="nome" class="control-label"></label>
+                    <input asp-for="nome" class="form-control" />
+                    <span asp-validation-for="nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="id_user" class="control-label"></label>
+                    <select asp-for="id_user" class ="form-control" asp-items="ViewBag.id_user"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+*@
+
+<script src="~/js/Receita.js"></script>

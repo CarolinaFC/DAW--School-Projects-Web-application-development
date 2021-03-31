@@ -1,0 +1,100 @@
+﻿@model culinariaMVC.Models.Receita
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Layout_AdminNovaReceita.cshtml";    
+    
+}
+
+<form asp-action="Edit" asp-route-name_admin="@User.Identity.Name" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row" id="box">
+        <div class="col-5 colEsq">
+            <div class="form-group">
+                <label asp-for="NomeReceita" class="control-label">Nome da Receita:</label>
+                <input asp-for="NomeReceita" type="text" class="form-control" id="nome_receita">
+                <span asp-validation-for="NomeReceita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCategoria" class="control-label">Categoria:</label>
+                <select asp-for="IdCategoria" class="form-control" id="categoria_editReceita"></select>
+                <span asp-validation-for="IdCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescricaoReceita" class="control-label">Descrição:</label>
+                <textarea asp-for="DescricaoReceita" class="form-control" rows="5" id="descricao"></textarea>
+                <span asp-validation-for="DescricaoReceita" class="text-danger"></span>
+            </div>
+            <div class="form-group" id="add_Ingredientes">
+                <label asp-for="Ingredientes" class="control-label">Ingredientes:</label>
+                <textarea asp-for="Ingredientes" class="form-control" rows="5" id="ingredientes"></textarea>
+                <span asp-validation-for="Ingredientes" class="text-danger"></span>
+            </div>
+            <div class="form-group" id="instrucoes_div">
+                <label asp-for="Instrucoes" class="control-label">Instruções</label>
+                <textarea asp-for="Instrucoes" class="form-control" rows="5" id="instrucoes"></textarea>
+                <span asp-validation-for="Instrucoes" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-5 colDir">
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label">Selecione uma Imagem:</label>
+                <input asp-for="ImageFile" id="img_upload" accept="image/*">
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="form-group">
+                <label asp-for="GrauDificuldade" class="control-label"></label>
+                <select asp-for="GrauDificuldade" class="form-control" id="grau_dific">
+                    <option selected disabled label="Grau de Dificuldade"></option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+                <span asp-validation-for="GrauDificuldade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustoRefeicao" class="control-label"></label>
+                <select asp-for="CustoRefeicao" class="form-control" id="custo_ref">
+                    <option selected disabled label="Custo da Refeição"></option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+                <span asp-validation-for="CustoRefeicao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TempoPreparacao" class="control-label"></label>
+                <select asp-for="TempoPreparacao" class="form-control" id="tempo_conf">
+                    <option selected disabled label="Tempo da confecção"></option>
+                    <option value="15 minutos">15 minutos</option>
+                    <option value="20 minutos">20 minutos</option>
+                    <option value="30 minutos">30 minutos</option>
+                    <option value="45 minutos">45 minutos</option>
+                    <option value="60 minutos">60 minutos</option>
+                    <option value="Superior a 60 minutos">Superior a 60 minutos</option>
+                </select>
+                <span asp-validation-for="TempoPreparacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doses" class="control-label">Doses</label>
+                <input asp-for="Doses" type="number" class="form-control" id="doses_NovaReceita" style="width:20%" /><a>Pessoas</a>
+                <span asp-validation-for="Doses" class="text-danger"></span>
+            </div>
+
+            <input asp-for="DataPublicacao" type="hidden" id="date" style="width:25%" />
+            <div class="form-group">
+                <input type="submit" value="Guardar Alteração" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script src="~/js/EditReceita.js"></script>
