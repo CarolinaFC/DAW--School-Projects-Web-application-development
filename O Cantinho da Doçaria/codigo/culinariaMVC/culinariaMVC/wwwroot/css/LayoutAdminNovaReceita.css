@@ -1,0 +1,107 @@
+﻿body {
+    background-image: url("/Photos/Bakery_Wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-size: cover;*/
+    background-size: cover;
+}
+
+.container {
+    background: white;
+}
+
+.navbar {
+    background-color: #723b17;
+}
+
+.jumbotron {
+    background-color: #f1f1f1;
+    height: 27vh;
+}
+
+#docaria_img {
+    margin-top: 1%;
+}
+
+#user_hello {
+    color: white;
+}
+
+#user_arquivos {
+    width: 30%;
+    margin-left: 4%;
+}
+
+#sair {
+    margin-left: 4%;
+    width: 30%;
+}
+
+img {
+    height: 159px;
+}
+
+/************* Form *************/
+#box {
+    border: 1px solid #723b17;
+    border-radius: 5px;
+    margin-bottom: 10%;
+}
+
+.colDir {
+    margin-top: 2%;
+}
+
+.colEsq {
+    margin-top: 2%;
+}
+
+#nova_receita_titulo {
+    margin-top: 5%;
+    margin-left: 20%;
+    color: #723b17;
+    background: white;
+    border: 1px solid #723b17;
+    border-radius: 7px;
+    width: 19%;
+}
+
+#nome_receita, #categoria_novaReceita {
+    width: 90%;
+}
+
+#img_upload {
+    width: 90%;
+}
+
+.selectGroup {
+    width: 90%;
+}
+
+#grauSelect {
+    margin-top: 20%;
+}
+.closebtn {
+    padding-left: 10px;
+    color: #888;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: #000;
+}
+
+#btn_Publicar {
+    position: relative;
+    margin-top: 10%;
+}
+
+/***************************Footer*******************************/
+#footer {
+    padding: 10px;
+    background-color: #723b17;
+    color: white;
+}

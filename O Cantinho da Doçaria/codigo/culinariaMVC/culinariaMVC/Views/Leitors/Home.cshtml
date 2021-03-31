@@ -1,0 +1,75 @@
+﻿@model IEnumerable<culinariaMVC.Models.Receita>
+@{
+    ViewData["Title"] = "Pasteleiro HomePage";
+    Layout = "~/Views/Shared/Layout_LeitorHome.cshtml";
+}
+
+<div class="row">
+    <div class="col-8 cards_grelha">
+        <h3>Receitas Top</h3>
+        <br>
+        <div class="row" id="card_receita">
+            @foreach (var receita in Model)
+            {
+                <div class="column">
+                    <div class="card">
+                        <img src="@("https://localhost:44313/Photos/" + receita.ImgReceita)" class="rounded img_card">
+                        <br>
+
+                    @*    @if()*@
+                        <a asp-action="Details" asp-controller="Receitas" asp-route-id="@receita.Id" id="nome_rec" style="color: black"><b>@receita.NomeReceita</b></a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <div class="caixa">
+        <div id="jumbo_pesquisa" class="jumbotron sticky-top">
+            <div id="section_pesquisa" class="col-4">
+                <h3>Pesquisa</h3>
+            </div>
+        </div>
+        <div class="img_caixa img_fluid">
+            <br><br>
+            <div class="form-group">
+                <select class="form-control" id="categoria" name="cat">
+                    <option selected disabled label="Categoria"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="grau_dific">
+                    <option>Grau de Dificuldade</option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="custo_ref">
+                    <option>Custo da Refeição</option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="tempo_conf">
+                    <option>Tempo da confecção</option>
+                    <option value="15 minutos">15 minutos</option>
+                    <option value="20 minutos">20 minutos</option>
+                    <option value="30 minutos">30 minutos</option>
+                    <option value="45 minutos">45 minutos</option>
+                    <option value="60 minutos">60 minutos</option>
+                    <option value="Superior a 60 minutos">Superior a 60 minutos</option>
+                </select>
+            </div>
+            <button class="btn" type="submit" id="btn_pesquisar">Pesquisar</button>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/HomeReceita.js"></script>
+
+

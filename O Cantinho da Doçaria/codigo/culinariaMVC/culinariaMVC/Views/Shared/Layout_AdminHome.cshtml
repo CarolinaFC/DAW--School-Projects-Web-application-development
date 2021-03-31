@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - O Cantinho da Doçaria</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="~/css/layoutAdminHome.css" type="text/css"></link>
+
+</head>
+<body>
+
+
+    <!-- Horizontal navbar -->
+    <nav class="navbar fixed-top navbar-dark">
+        <div class="col-8">
+            <a class="navbar-brand" asp-controller="Admin_pasteleiro" asp-action="Home"><b>O Cantinho da Doçaria</b></a>
+        </div>
+
+        <div class="col-4">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a id="user_hello">Olá, @User.Identity.Name</a>
+                <a id="user_arquivos" type="button" class="btn btn-secondary" asp-controller="Admin_pasteleiro" asp-action="Arquivos_Admin" asp-route-name_admin="@User.Identity.Name"><i class="fas fa-file"></i>  Receitas</a>
+                <a id="sair" type="button" class="btn btn-secondary" asp-controller="Users" asp-action="Logout"><i class="fas fa-users"></i>  Sair</a>
+            }
+            else
+            {
+                <a id="user_loginRegister" type="button" class="btn btn-secondary" asp-controller="users" asp-action="create"><i class="fas fa-users"></i> Login/Registo</a>
+            }
+
+        </div>
+    </nav>
+    <!-- End Horizontal navbar -->
+
+    <div class="jumbotron ">
+        <img id="docaria_img" src="~/Photos/docaria_laranja.jpg" class="mx-auto d-block img-fluid">
+    </div>
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+
+    
+    @RenderSection("Scripts", required: false)
+</body>
+<footer class="border-top footer text-muted">
+    <div id="footer">
+        &copy; 2021 - culinariaMVC
+    </div>
+</footer>
+</html>

@@ -1,0 +1,188 @@
+/* ------------------------- Filtro de Pesquisa --------------- */
+#filtro {
+    background-color: #f2f2f2;
+    padding: 7px;
+}
+
+#registar {
+    background-color: #222;
+    color: white;
+    width: 150px;
+    float: right;
+    margin-top: 2%;
+    margin-left: 90%;
+}
+
+#curso, #uc, #epoca, #btn_search_add {
+    width: 205%;
+    margin: 24px;
+}
+#curso {
+    margin-left: 10px;
+    margin-right: -30px;
+}
+#uc {
+    margin-left: 10px;
+    margin-right: -75px;
+}
+#epoca {
+    margin-left: 55px;
+    margin-right: -30px;
+}
+#btn_search_add {
+    margin-left: 15px;
+}
+
+.column_card {
+    float: left;
+    width: 70%;
+    padding: 0 10px;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .column_card {
+        width: 155%;
+        display: block;
+        margin-bottom: 20px;
+        margin-left: -10px;
+    }
+    #curso_col, #uc_col, #epoca_col, #btn_add_col {
+        display: table-cell;
+        position: relative;
+    }
+    #curso {
+        width: 160%;
+        margin-left: 5px;
+        margin-top: 90%;
+        position: absolute;
+        transform: translate(0, -50%);
+    }
+    #uc {
+        width: 160%;
+        margin-left: -96%;
+        margin-top: 135%;
+        position: absolute;
+
+    }
+    #epoca {
+        width: 160%;
+        margin-left: -196%;
+        margin-top: 205%;
+        position: absolute;
+
+    }
+    #btn_search_add {
+        margin-left: -105px;
+        margin-top: 100px;
+        width: 160%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .column_card {
+        width: 75%;
+        display: block;
+        margin-bottom: 20px;
+        margin-left: -10px;
+    }
+    #curso_col, #uc_col, #epoca_col, #btn_add_col {
+        display: table-cell;
+        position: relative;
+        margin-top: 65px;
+    }
+    #curso {
+        width: 160%;
+        margin-left: 5px;
+        margin-top: 20px;
+        position: absolute;
+        transform: translate(0, -50%);
+    }
+    #uc {
+        width: 160%;
+        margin-left: -110px;
+        margin-top: 80px;
+        position: absolute;
+
+    }
+    #epoca {
+        width: 160%;
+        margin-left: -225px;
+        margin-top: 180px;
+        position: absolute;
+
+    }
+    #btn_search_add {
+        margin-left: -110px;
+        margin-top: 45%;
+        width: 160%;
+    }
+}
+
+
+/* ----------------------- Tabela ----------------------------- */
+table {
+    text-align: center;
+    margin-top: 4%;
+    border: 1px solid black;
+}
+.thead {
+    background-color: #333333;
+    color: white;
+}
+td {
+    width: 16%;
+}
+#select_epoca1 {
+    width: 100%;
+}
+.nota {
+    margin-left: 5%;
+    text-align: center;
+}
+tbody {
+    max-height: 400px;
+    display: block;
+    overflow-y: auto;
+}
+th {
+    width: 1%;
+    position: sticky;
+    top: 0;
+}
+.tableInput {
+    border: 0;
+    text-align: center;
+    outline: none;
+    background: none;
+}
+.tableInput:hover {
+    border: 0;
+}
+tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#success{
+    width: 100%;
+    text-align: center;
+}
+
+#loading{
+    width: 1%;
+}
+
+
+h2, #question{
+    display: inline;
+}
+
+#question{
+    margin-left: 33%;
+}
+
+.fa-question-circle{
+    margin-top: 20px;
+}

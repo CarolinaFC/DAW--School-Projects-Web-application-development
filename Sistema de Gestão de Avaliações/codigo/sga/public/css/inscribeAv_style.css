@@ -1,0 +1,97 @@
+table {
+    text-align: center;
+    margin-top: 2%;
+    border: solid 1px #333;
+}
+.thead {
+    background-color: #333333;
+    color: white;
+}
+
+th, td {
+    width: 20%;
+    text-align: center;
+}
+
+tbody{
+    max-height: 180px;
+    display: block;
+    overflow-y: auto;
+}
+
+tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.ano{
+    width: 10px;
+}
+
+.uc{
+    width: 200px;
+}
+
+#total{
+    border-top: 1px dashed #333;
+}
+
+.cart{
+    text-align: left;
+    border: none;
+}
+
+.card-title{
+    margin-top: 5px;
+    margin-bottom: -1px;
+}
+
+.list{
+    margin-top: 174px;
+    display: none;
+}
+
+#success{
+    margin-top: 174px;
+    height: 8vh;
+}
+
+.card{
+    margin: auto;
+    width: 130%;
+}
+
+#inscrever{
+    background-color: #222;
+    color: white;
+    width: 100%;
+
+}
+
+#continue{
+    float: right;
+    margin-left: 90%;
+}
+
+.preco{
+    text-align: right;
+}
+
+.info{
+    text-align: left;
+    width: auto;
+}
+
+
+h2, #question{
+    display: inline;
+}
+
+#question{
+    margin-left: 2%;
+}
+
+.fa-question-circle{
+    margin-bottom: 20px;
+}

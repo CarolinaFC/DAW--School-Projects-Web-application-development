@@ -1,0 +1,121 @@
+#filtro{
+    background-color: #f2f2f2;
+
+}
+
+#marcar{
+    background-color: #222;
+    color: white;
+    width: 250px;
+    margin-left: 90%;
+    margin-top: 10px;
+}
+
+#cursos, #uc, #epoca, #sala{
+    width: 125%;
+    margin: 8px;
+}
+
+#ip_hora, #ip_data{
+    width: 80%;
+    margin: 8px;
+    text-align: center;
+}
+
+#hora, #data{
+    text-align: center;
+    margin-top: 8px;
+    width: 125%;
+}
+
+/* ----------------------- Tabela ----------------------------- */
+table {
+    text-align: center;
+    margin-top: 3%;
+    border: solid 1px #333;
+
+}
+
+.thead {
+    background-color: #333333;
+    color: white;
+}
+
+.td_h, #loading{
+    width: 1%;
+}
+
+td {
+    width: 10%;
+}
+
+th{
+    width: 15%;
+    position: sticky;
+    top: 0;
+}
+
+tbody{
+    max-height: 260px;
+    display: block;
+    overflow-y: auto;
+}
+
+
+/* --------- Selects ---------------- */
+select option:disabled {
+    color: #000;
+    font-weight: bold;
+}
+
+.opt{
+    color: grey;
+}
+
+#fil{
+    width: 25%;
+}
+
+#filtrar{
+    margin-left: -10px;
+    width: 80px;
+}
+
+#AnoLetivo{
+    width: 180px;
+}
+
+#filtable{
+    color: black;
+    margin-left: 16px;
+}
+
+#filtable:hover{
+    color: black;
+}
+
+#verTable{
+    color: black;
+    margin-left: 45px;
+}
+
+#verTable:hover{
+    color: black;
+}
+
+#success{
+    width: 100%;
+    text-align: center;
+}
+
+h2, #question{
+    display: inline;
+}
+
+#question{
+    margin-left: 48%;
+}
+
+.fa-question-circle{
+    margin-top: 20px;
+}

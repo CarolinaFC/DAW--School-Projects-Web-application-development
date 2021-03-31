@@ -1,0 +1,55 @@
+﻿@model IEnumerable<culinariaMVC.Models.Receita>
+
+@{
+    ViewData["Title"] = "Pasteleiro - As Minhas Receitas";
+    Layout = "~/Views/Shared/Layout_AdminHome.cshtml";
+}
+<div class="row">
+    <div class="col-8 cards_grelha">
+        <h3 id="title">As Minhas Receitas</h3>
+        <a id="nova_receita" type="button" class="btn btn-secondary" asp-controller="Receitas" asp-action="Create"><i class="fas fa-plus"></i> Nova Receita</a>
+        <br>
+        <br>
+        <div class="row" id="card_receita">
+
+            @foreach (var receita in Model)
+            {
+                <div class="column">
+                    <div class="card">
+                        <img src="@("https://localhost:44313/Photos/" + receita.ImgReceita)" class="rounded img_card">
+                        <br>
+                        <a asp-action="Details" asp-controller="Receitas" asp-route-id="@receita.Id" style="color: black"><b>@receita.NomeReceita</b></a>
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="btn btn-secondary" type="button" id="btn_edit" asp-controller="Receitas" asp-action="Edit" asp-route-id="@receita.Id">Edit</a>
+                            </div>
+                            <div class="col-6">
+                                <a class="btn btn-danger" type="button" id="btn_remove" asp-controller="Receitas" asp-action="Delete" asp-route-id="@receita.Id">Remover</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <input type="hidden" class="hidden_name_admin" id="@User.Identity.Name" />
+    </div>
+
+    <div class="caixa">
+        <div id="jumbo_pesquisa" class="jumbotron sticky-top">
+            <div id="section_pesquisa" class="col-4">
+                <h3>Pesquisa</h3>
+            </div>
+        </div>
+        <div class="img_caixa img_fluid">
+            <br><br>
+            <div class="form-group">
+                <select class="form-control" id="categoria" name="cat"></select>
+            </div>
+
+            <button class="btn" type="button" id="btn_pesquisar">Pesquisar</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/js/AdminArquivos.js"></script>

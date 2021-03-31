@@ -1,0 +1,37 @@
+﻿@model IEnumerable<culinariaMVC.Models.Admin_pasteleiro>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout_AdminHome.cshtml";
+}
+
+<h1>Home</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id_userNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_userNavigation.Id_user)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id_admin">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id_admin">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id_admin">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

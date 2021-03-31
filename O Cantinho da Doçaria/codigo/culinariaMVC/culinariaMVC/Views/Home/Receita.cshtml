@@ -1,0 +1,130 @@
+﻿
+@model culinariaMVC.Models.Receita
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/Layout_Home.cshtml";
+
+}
+
+<link rel="stylesheet" href="~/css/Receita.css" type="text/css"></link>
+
+<div class="row">
+    <div class="col-9 conteudo_receita">
+        <div class="col-9">
+            <h3 id="nome_receita">@Model.NomeReceita</h3>
+                <div id="stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            <h5><i class="fas fa-heart" id="guardar_receita" style="color: red; margin-left: 2.2%"></i> Guardar Receita</h5>
+        </div>
+
+
+
+        <div class="col-3" id="detalhes">
+            <table class="table" id="table_detalhes">
+                <tbody>
+                    <tr>
+                        <td scope="row">Data da Publicação</td>
+                        <td>@Model.DataPublicacao</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Categoria</td>
+                        <td>@Model.IdCategoria</td>
+                    </tr>
+            </table>
+        </div>
+
+        <div class="col-6" id="img_receita">
+            <img src="@Model.ImgReceita" alt="@Model.NomeReceita" width="590px" height="410px" style="margin-left: 2%">
+        </div>
+        <div class="col-3" id="tags">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td scope="row">Grau de Dificuldade</td>
+                        <td>@Model.GrauDificuldade</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Tempo de Confecção</td>
+                        <td>@Model.TempoPreparacao</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Doses</td>
+                        <td>@Model.Doses</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Custo da Refeição</td>
+                        <td>@Model.CustoRefeicao</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br><br>
+        <div id="descricao" class="col-10">
+            <h4>Descrição</h4>
+            <p>@Model.DescricaoReceita</p>
+        </div>
+
+        <div id="ingredientes" class="col-10">
+            <h4>Ingredientes</h4>
+            <ul>
+                <li><p>@Model.Ingredientes</p></li>
+                @*<li>5 Chávenas de farinha</li>
+                <li>3 Chávenas de açucar</li>
+                <li>4 Ovos</li>
+                <li>4 Colheres de manteigas</li>
+                <li>Massa Folhada</li>
+                <li>1Kg de frutos vermelhos</li>
+                <li>1 pitada de Sal</li>*@
+            </ul>
+
+        </div>
+
+        <div id="instrucoes" class="col-10">
+            <h4>Instruções</h4>
+            <p>@Model.Instrucoes</p>
+
+        </div>
+    </div>
+
+    <div class="caixa">
+        <div id="jumbo_comentarios" class="sticky-top">
+            <div id="section_comentarios" class="col-3">
+                <br>
+                <h3>Comentários</h3>
+            </div>
+        </div>
+        <div class="img_caixa img_fluid">
+            <br><br>
+            <div class="form-group comentarios" id="coment_box">
+                @*<div class="container darker">
+                <img src="user.png" alt="Avatar" class="right" style="width:100%;">
+                <p>Hey! I'm fine. Thanks for asking!</p>
+                <span class="time-left">11:01</span>
+                </div>*@
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="label_comentario" for="new_comentario">Novo Comentário:</label>
+            <!--                    <span id="rating_ava">Avaliação</span>-->
+            <div class="rating_stars">
+                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+
+            </div>
+            <br>
+            <textarea id="new_comentario" class="form-control" rows="3"></textarea>
+            <button class="btn btn-secondary" type="submit" id="btn_comentar">Comentar</button>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/Receita.js"></script>

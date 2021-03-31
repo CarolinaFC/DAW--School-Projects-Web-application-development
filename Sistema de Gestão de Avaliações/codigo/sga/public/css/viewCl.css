@@ -1,0 +1,101 @@
+/* ------------------------- Filtro de Pesquisa --------------- */
+#filtro {
+    background-color: #f2f2f2;
+    padding: 7px;
+}
+
+#ano_letivo,  #periodo, #ano_curricular, #epoca {
+    width: 205%;
+    margin: 24px;
+}
+#ano_letivo {
+    margin-left: 10px;
+    margin-right: -30px;
+}
+#periodo {
+    margin-left: 10px;
+    margin-right: -75px;
+}
+#ano_curricular {
+    margin-left: 55px;
+    margin-right: -30px;
+}
+#epoca {
+    margin-left: 15px;
+}
+#btn_procurar {
+    margin-top: 23px;
+    margin-left: -15px;
+}
+
+.column_card {
+    float: left;
+    width: 70%;
+    padding: 0 10px;
+}
+
+
+/* ----------------------- Tabela ----------------------------- */
+table {
+    text-align: center;
+    margin-top: 4%;
+    border: 1px solid black;
+}
+.thead {
+    background-color: #333333;
+    color: white;
+}
+td {
+    width: 8vw;
+}
+
+tbody {
+    max-height: 400px;
+    display: block;
+    overflow-y: auto;
+}
+th {
+    width: 17vw;
+    position: sticky;
+    top: 0;
+}
+
+#periodo_table {
+    width: 2vw;
+}
+#uc_table {
+    width: 23vw;
+}
+#ects_table {
+    width: 15vw;
+}
+#data_table {
+    width: 20vw;
+}
+#status_table {
+    width: 20vw;
+}
+
+#semestre, #semestre1 {
+    width: 0;
+}
+#nome_uc, #nome_uc1 {
+    width: 15vw;
+}
+#ects, #ects1 {
+    width: 4vw;
+}
+#anoLetivo, #anoLetivo1 {
+    width: 12vw;
+}
+#status_uc, #status_uc1 {
+    width: 10vw;
+}
+
+#noneClass, #noneClass1 {
+    width: 1%;
+}
+
+#loading{
+    width: 1%;
+}
